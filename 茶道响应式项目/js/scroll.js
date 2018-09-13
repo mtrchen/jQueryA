@@ -1,0 +1,9 @@
+$(function(){
+	$(window).scroll(function(){
+		if($(window).scrollTop()>0){
+			$('.header').css({'background':'#fff','height':'60px','line-height':'60px'})
+		}else{
+			$('.header').css({'background':'rgba(28,33,36,0)','height':'80px','line-height':'80px'})
+		}
+	})
+})
