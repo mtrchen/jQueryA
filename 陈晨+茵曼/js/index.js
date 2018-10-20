@@ -2,7 +2,7 @@
 			// jquery 兼容的滚轮事件
 			var num=0
 			var str
-			var sY=635
+			var sY=100
 			var boxY
 			var fun
 			var res
@@ -10,42 +10,36 @@
     			var delta = (e.originalEvent.wheelDelta && (e.originalEvent.wheelDelta > 0 ? 1 : -1)) ||  // chrome & ie
                 (e.originalEvent.detail && (e.originalEvent.detail > 0 ? -1 : 1)); // firefox
 				    // 翻页特效开始
-				    boxY=$('#box').offset().top
-				    boxT={
-				    	top:(boxY+sY)+'px'
-				    }
-				    boxB={
-				    	top:(boxY-sY)+'px'
-				    }
+				    console.log((-sY*num+'%'))
 				    if (delta > 0){
 				        // 向上滚
 				        if(boxY>=0){
-				        	$('#box').position().top=0+'px'
+				        	$('#box').position().top=0+'%'
 				        }else{
 				        	if(!$("#box").is(":animated")){ 
 				        		//元素不处于动画中执行。 
-								$('#box').stop().animate(boxT,500)
 								if(num>0){
 									num--
 								}else{
 									num=0
 								}
+								$('#box').stop().animate({top:(-sY*num+'%')},500)
 								hdxyd()
 				        	}
 				        }
 				    } else if (delta < 0) {
 				        // 向下滚
-				         if(boxY<=-8255){
-				        	$('#box').position().top=-8255+'px'
+				         if(boxY<=-sY*13){
+				        	$('#box').position().top=-(sY*13)+'%'
 				        }else{
 				        	if(!$("#box").is(":animated")){ 
 							//元素不处于动画中执行。 
-								$('#box').stop().animate(boxB,500)
-								if(num<14){
+								if(num<13){
 									num++
 								}else{
-									num=14
+									num=13
 								}
+								$('#box').stop().animate({top:(-sY*num+'%')},500)
 								hdxyd()
 							}
 				        }
@@ -57,7 +51,7 @@
 					// 右侧锚点
 				    $('#rtmdbox .rtmd').click(function(){
 				    	num=$(this).index() 
-				    	$('#box').stop().animate({top:-num*635},500)
+				    	$('#box').stop().animate({top:-(num*sY)+'%'},500)
 				    	hdxyd()
 				    	// 调用特效函数
 				    	hstx()
@@ -67,7 +61,7 @@
 				    	str=$(this).attr('value')
 				    	num=Number(str)
 				    	hdxyd()
-				    	$('#box').stop().animate({top:-(num*635)},500)
+				    	$('#box').stop().animate({top:-(num*sY)+'%'},500)
 				    	// 特效函数
 				    	hstx()
 				    })

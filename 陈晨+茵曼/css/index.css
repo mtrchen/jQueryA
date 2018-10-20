@@ -1,10 +1,11 @@
 *{margin:0;padding:0;}
 ul{list-style:none;}
 a{text-decoration:none;}
-div.warp{width:100%;height:635px;margin:0 auto;position:relative;overflow:hidden;}
-div.warp>div#box{width:100%;height:8890px;position:absolute;top:0px;left:0px;}
-div.warp>div#box>div.a1{width:100%;height:635px;float:left;position:relative;}
-
+body{overflow:hidden;}
+html,body{height:100%;}
+div.warp{width:100%;height:100%;margin:0 auto;position:relative;overflow:hidden;}
+div.warp>div#box{width:100%;height:1400%;position:absolute;top:0%;left:0%;}
+div.warp>div#box>div.a1{width:100%;height:7.15%;float:left;position:relative;}
 /*导航栏锚点盒子*/
 div.warp>div#navbox{width:100%;height:56px;background:#f0f0f0;position:fixed;top:0px;left:0px;z-index:1000;}
 div.warp>div#navbox>ul#nMdbox{width:800px;height:56px;margin:0 auto;}
@@ -187,7 +188,7 @@ div.warp>div#box>div#pg14>div.pg14bot>h3>img{width:20px;height:19px;float:left;}
 div.warp>div#box>div#pg14>div.pg14bot>p{font-size:14px;color:#121212;}
 
 /*页面载入盒子*/
-div.indexzr{width:100%;height:635px;background:#fff;position:fixed;top:0px;left:0px;z-index:10000;}
+div.indexzr{width:100%;height:100%;background:#fff;position:fixed;top:0px;left:0px;z-index:10000;}
 div.indexzr>div.zrys{width:800px;height:200px;margin:200px auto;}
 div.indexzr>div.zrys>div.borbox{width:60px;height:60px;margin:0 auto;position:relative;}
 div.indexzr>div.zrys>div.borbox>div.borX{width:60px;height:60px;border-radius:30px;background:#6bbfb1;position:absolute;top:0px;left:0px;}
